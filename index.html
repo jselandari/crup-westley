@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Escore de Westley</title>
+  <meta name="description" content="Calculadora del score de Westley para la gravedad del crup.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Westley">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Escore de Westley</h1>
+    <p class="sub">Gravedad del crup</p>
+  </header>
+
+  <main>
+    <p class="note">Las características más críticas son las retracciones de la pared torácica y el estridor en reposo.</p>
+
+    <form id="form" autocomplete="off">
+
+      <fieldset data-item="conciencia">
+        <legend>Nivel de conciencia</legend>
+        <label class="opt"><input type="radio" name="conciencia" value="0"><span class="txt">Normal, incluido el sueño</span><span class="pts">0</span></label>
+        <label class="opt"><input type="radio" name="conciencia" value="5"><span class="txt">Desorientado</span><span class="pts">5</span></label>
+      </fieldset>
+
+      <fieldset data-item="cianosis">
+        <legend>Cianosis</legend>
+        <label class="opt"><input type="radio" name="cianosis" value="0"><span class="txt">Ausente</span><span class="pts">0</span></label>
+        <label class="opt"><input type="radio" name="cianosis" value="4"><span class="txt">Con agitación</span><span class="pts">4</span></label>
+        <label class="opt"><input type="radio" name="cianosis" value="5"><span class="txt">En reposo</span><span class="pts">5</span></label>
+      </fieldset>
+
+      <fieldset data-item="estridor">
+        <legend>Estridor</legend>
+        <label class="opt"><input type="radio" name="estridor" value="0"><span class="txt">Ausente</span><span class="pts">0</span></label>
+        <label class="opt"><input type="radio" name="estridor" value="1"><span class="txt">Con agitación</span><span class="pts">1</span></label>
+        <label class="opt"><input type="radio" name="estridor" value="2"><span class="txt">En reposo</span><span class="pts">2</span></label>
+      </fieldset>
+
+      <fieldset data-item="entrada">
+        <legend>Entrada de aire</legend>
+        <label class="opt"><input type="radio" name="entrada" value="0"><span class="txt">Normal</span><span class="pts">0</span></label>
+        <label class="opt"><input type="radio" name="entrada" value="1"><span class="txt">Disminuida</span><span class="pts">1</span></label>
+        <label class="opt"><input type="radio" name="entrada" value="2"><span class="txt">Marcadamente disminuida</span><span class="pts">2</span></label>
+      </fieldset>
+
+      <fieldset data-item="retracciones">
+        <legend>Retracciones</legend>
+        <label class="opt"><input type="radio" name="retracciones" value="0"><span class="txt">Ausentes</span><span class="pts">0</span></label>
+        <label class="opt"><input type="radio" name="retracciones" value="1"><span class="txt">Leves</span><span class="pts">1</span></label>
+        <label class="opt"><input type="radio" name="retracciones" value="2"><span class="txt">Moderadas</span><span class="pts">2</span></label>
+        <label class="opt"><input type="radio" name="retracciones" value="3"><span class="txt">Graves</span><span class="pts">3</span></label>
+      </fieldset>
+
+    </form>
+
+    <section class="ref" aria-labelledby="ref-title">
+      <h2 id="ref-title">Interpretación</h2>
+      <table>
+        <thead><tr><th scope="col">Puntaje</th><th scope="col">Crup</th></tr></thead>
+        <tbody>
+          <tr data-level="leve"><td>≤ 2</td><td>Leve</td></tr>
+          <tr data-level="moderado"><td>3 a 5</td><td>Moderado</td></tr>
+          <tr data-level="grave"><td>6 a 11</td><td>Grave</td></tr>
+          <tr data-level="inminente"><td>≥ 12</td><td>Insuficiencia respiratoria inminente</td></tr>
+        </tbody>
+      </table>
+      <p class="disc">Herramienta de apoyo. No reemplaza el juicio clínico.</p>
+    </section>
+  </main>
+
+  <footer class="bar" id="bar" data-level="vacio" role="status" aria-live="polite">
+    <div class="score"><span id="total">–</span><small>puntos</small></div>
+    <div class="verdict">
+      <strong id="label">Sin completar</strong>
+      <span id="hint">Completá los 5 ítems</span>
+    </div>
+    <button type="button" id="reset">Reiniciar</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
