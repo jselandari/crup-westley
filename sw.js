@@ -1,4 +1,4 @@
-var CACHE = 'westley-v1';
+var CACHE = 'westley-v2';
 var ASSETS = [
   './',
   'index.html',
